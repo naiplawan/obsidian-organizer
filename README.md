@@ -122,6 +122,14 @@ Notes progress through:
 
 ## Installation
 
+### Option 1: npx (Recommended)
+
+```bash
+npx claude-skill add obsidian-organizer
+```
+
+### Option 2: Manual
+
 Download the `.skill` file and install via Claude Code settings.
 
 ## Related Skills
