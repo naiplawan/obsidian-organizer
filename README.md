@@ -161,7 +161,7 @@ Notes progress through:
 
 ```bash
 # Quick install
-npx skills add naiplawan/disciplina
+npx skills add naiplawan/obsidian-organizer
 ```
 
 ### Option 2: Manual
