@@ -161,11 +161,7 @@ Notes progress through:
 
 ```bash
 # Quick install
-npx -y @anthropic-ai/claude-code skill add obsidian-organizer
-
-# Or first install CLI globally
-npm install -g claude-code
-claude skill add obsidian-organizer
+npx skills add naiplawan/disciplina
 ```
 
 ### Option 2: Manual
