@@ -1,8 +1,17 @@
 # Obsidian Organizer
 
-A Claude Skill for organizing Obsidian vaults specifically for AI retrieval, RAG systems, and Claude Skills integration.
+**Version 2.0** — Now with Excalidraw visualization support
 
-> Transform scattered notes into atomic, interlinked knowledge optimized for AI assistants.
+A Claude Skill for organizing Obsidian vaults specifically for AI retrieval, RAG systems, and Excalidraw visual knowledge systems.
+
+> Transform scattered notes into atomic, interlinked knowledge optimized for AI assistants and visual reasoning.
+
+## What's New in v2.0
+
+- **Excalidraw Integration** — Generate architecture diagrams, flowcharts, mind maps, timelines
+- **Hybrid Knowledge Entries** — Note + diagram pairs with proper embedding
+- **Visual Metadata** — `diagram`, `visual_type`, `animation`, `layout` fields
+- **Animated Diagram Support** — Sequence ordering for Excalidraw animations
 
 ## What It Does
 
@@ -23,7 +32,13 @@ Trigger phrases:
 - "clean up knowledge base"
 - "optimize for AI retrieval"
 - "split this note"
-- Mentions of "vault", "MOC", "knowledge graph"
+- "create diagram"
+- "draw architecture"
+- "generate Excalidraw"
+- "visualize workflow"
+- "flowchart"
+- "mind map"
+- Mentions of "vault", "MOC", "knowledge graph", "Excalidraw", "diagram"
 
 ## Core Principles
 
@@ -55,7 +70,12 @@ keywords:           # search terms
 status:            # active, deprecated
 confidence:        # high, medium, low
 last_verified:      # YYYY-MM-DD
-related:
+related:           # wiki-links
+# v2.0 visual fields
+diagram:            # filename.excalidraw
+visual_type:        # architecture, flow, timeline, mindmap
+animation:          # true, false
+layout:             # hierarchy, matrix, freeform
 ---
 ```
 
@@ -69,6 +89,16 @@ related:
 | 4 | Failure patterns | High |
 | 5 | Tradeoffs | High |
 
+## Visual Knowledge Priority (v2.0)
+
+| Priority | Type | Value |
+|----------|------|-------|
+| 1 | Incidents + timeline diagrams | Highest |
+| 2 | Architecture + service maps | Highest |
+| 3 | ADRs + tradeoff visuals | High |
+| 4 | Debugging flows | High |
+| 5 | Failure visualizations | High |
+
 ## Folder Structure
 
 Recommended vault organization:
@@ -79,6 +109,11 @@ Recommended vault organization:
 │   ├── /Architecture/
 │   ├── /Patterns/
 │   └── /Standards/
+├── /Diagrams/          # Excalidraw visualizations (v2.0)
+│   ├── /Architecture/
+│   ├── /Flows/
+│   ├── /Incidents/
+│   └── /Mindmaps/
 ├── /Incidents/          # Production failures
 ├── /Decisions/          # ADRs
 ├── /Runbooks/           # Operational procedures
@@ -136,6 +171,15 @@ Download the `.skill` file and install via Claude Code settings.
 
 - [obsidian-markdown](https://github.com/anthropics/claude-code) — For creating new notes with proper syntax
 - [obsidian-bases](https://github.com/anthropics/claude-code) — For setting up new vaults from scratch
+- [monumentum](https://github.com/anthropics/claude-code) — For turning incidents into visual knowledge entries
+
+## Excalidraw Output Modes (v2.0)
+
+| Trigger | Mode | Format | Usage |
+|---------|------|-------|-------|
+| `Excalidraw` / `diagram` / `flowchart` | Obsidian | `.md` | Open directly in Obsidian |
+| `standard excalidraw` | Standard | `.excalidraw` | Open in excalidraw.com |
+| `animate` / `animated diagram` | Animated | `.excalidraw` | Excalidraw animate |
 
 ## License
 

@@ -1,928 +1,594 @@
 ---
 name: obsidian-organizer
-description: "Organize Obsidian notes for AI retrieval. Apply this skill whenever the user mentions organizing, restructuring, or optimizing Obsidian vaults, knowledge bases, or note collections. Use it when users say 'organize my notes', 'make notes AI-friendly', 'restructure for Claude retrieval', 'clean up knowledge base', or when working with MOCs, wikilinks, and vault architecture. This skill transforms scattered notes into atomic, interlinked knowledge optimized for AI assistants, Claude Skills, and RAG systems."
+description: "Organize Obsidian notes for AI retrieval and generate Excalidraw visualizations. Apply this skill whenever the user mentions organizing, restructuring, optimizing, visualizing, diagramming, or improving Obsidian vaults, knowledge bases, workflows, architectures, or note collections. Use it when users say 'organize my notes', 'make notes AI-friendly', 'restructure for Claude retrieval', 'clean up knowledge base', 'create diagrams', 'draw architecture', 'generate Excalidraw', 'visualize workflow', 'flowchart', 'mind map', or when working with MOCs, wikilinks, vault architecture, and visual knowledge systems. This skill transforms scattered notes into atomic, interlinked knowledge optimized for AI assistants, Claude Skills, RAG systems, and Excalidraw-based visual retrieval."
+metadata:
+  version: 2.0.0
+  capabilities:
+    - obsidian-organization
+    - rag-optimization
+    - wikilink-generation
+    - frontmatter-standardization
+    - knowledge-graph-optimization
+    - excalidraw-generation
+    - architecture-visualization
+    - animated-diagrams
 ---
 
-# Obsidian Organizer
+# Obsidian Organizer + Excalidraw Visual Knowledge System
 
-Transform scattered Obsidian notes into AI-ready knowledge. This skill applies 10 core principles to make notes work well with Claude Skills, RAG systems, and AI assistants.
+Transform scattered Obsidian notes into AI-ready, visually connected knowledge systems.
 
-## Usage Modes
+This skill combines:
 
-### Quick Mode (Default)
-For already-organized vaults that just need enhancement:
-1. Add missing frontmatter fields
-2. Create wikilinks where missing
-3. Add type field to notes
-
-### Full Mode
-For scattered notes that need restructuring:
-1. Scan and identify problems
-2. Split merged notes
-3. Create folder structure
-4. Apply templates
-5. Validate
-
-### One-Off Operations
-- "Split this note" → Splits into atomic concepts
-- "Add links" → Creates wikilinks between notes
-- "Fix frontmatter" → Adds missing fields
-- "Create structure" → Sets up folders + templates
-
----
-
-## Core Philosophy
-
-> **You are no longer organizing notes only for humans.**
-> **You are organizing context for AI retrieval.**
-
-AI doesn't care about:
-- Beautiful folder trees
-- Aesthetic dashboards
-- Visual graph views
-
-AI cares about:
-- Chunk quality
-- Explicit context
-- Terminology consistency
-- Relationships
-- Structured knowledge
+* Structured Obsidian organization
+* AI retrieval optimization
+* RAG-friendly metadata
+* Excalidraw visualization generation
+* Architecture and workflow diagrams
+* Visual concept mapping
 
 ---
 
-## Workflow Overview
+# Core Philosophy
 
-1. **Quick Scan** — Check what's missing (fast)
-2. **Enhance** — Add what's needed (targeted)
-3. **Validate** — Verify key checks pass
+> You are no longer organizing notes only for humans.
+> You are organizing structured context for AI retrieval and visual reasoning.
 
-### Quick Scan (Fast Path)
+AI systems benefit from:
 
-Instead of comprehensive analysis, focus on what's missing:
+* Atomic knowledge
+* Explicit relationships
+* Semantic consistency
+* Structured metadata
+* Visual representations
+* Diagram-based contextual understanding
 
-```bash
-# Fast checks - don't over-analyze
-head -5 *.md | grep -c "---"                    # Has frontmatter?
-grep -l "^updated:" *.md | wc -l               # Has updated date?
-grep -l "\[\[" *.md | wc -l                     # Has wikilinks?
+This skill optimizes both:
+
+1. Text retrieval
+2. Visual comprehension
+
+---
+
+# Unified Workflow
+
+## Mode 1 — Knowledge Organization
+
+Used for:
+
+* Vault cleanup
+* RAG optimization
+* Frontmatter fixes
+* Wikilink creation
+* Note splitting
+* Folder restructuring
+
+## Mode 2 — Visual Knowledge Generation
+
+Used for:
+
+* Architecture diagrams
+* Flowcharts
+* Mind maps
+* Relationship maps
+* Timelines
+* Animated Excalidraw exports
+
+## Mode 3 — Hybrid Knowledge System (Recommended)
+
+Combines:
+
+1. Structured notes
+2. Linked concepts
+3. Excalidraw visualizations
+4. Embedded diagrams
+5. Retrieval metadata
+
+Recommended for:
+
+* Engineering knowledge bases
+* Architecture documentation
+* Incident management systems
+* ADR repositories
+* Operational intelligence vaults
+
+---
+
+# Trigger Detection
+
+## Organization Triggers
+
+* organize my notes
+* optimize for AI retrieval
+* restructure vault
+* split this note
+* add wikilinks
+* fix frontmatter
+* clean up knowledge base
+* make AI-friendly
+
+## Excalidraw / Visualization Triggers
+
+* Excalidraw
+* diagram
+* architecture diagram
+* flowchart
+* mind map
+* visualize
+* workflow diagram
+* flowchart
+* mind map
+* visualization
+* standard excalidraw
+* animate
+* animated diagram
+* Excalidraw animation
+
+---
+
+# Excalidraw Integration
+
+## Output Modes
+
+| Trigger                          | Mode     | Format      | Usage                       |
+| -------------------------------- | -------- | ----------- | --------------------------- |
+| Excalidraw / diagram / flowchart | Obsidian | .md         | Open directly in Obsidian   |
+| standard excalidraw              | Standard | .excalidraw | Open in excalidraw.com      |
+| animate / animated diagram       | Animated | .excalidraw | Use with excalidraw-animate |
+
+---
+
+# Diagram Type Selection Guide
+
+| Type         | Use Case                         |
+| ------------ | -------------------------------- |
+| Flowchart    | Workflows, execution paths       |
+| Mind Map     | Idea expansion, concept grouping |
+| Hierarchy    | Systems, org structures          |
+| Relationship | Dependencies, interactions       |
+| Timeline     | Incidents, migrations, history   |
+| Matrix       | Prioritization, comparisons      |
+| Architecture | Services, infrastructure         |
+| Freeform     | Brainstorming                    |
+
+---
+
+# Hybrid Knowledge Design Rules
+
+## Every Major Concept Should Have:
+
+1. Atomic markdown note
+2. Metadata-rich frontmatter
+3. Wikilinks
+4. Related diagram
+5. Searchable keywords
+6. Stable naming
+
+---
+
+# Visual Knowledge Rules
+
+## Excalidraw Standards
+
+### Text Rules
+
+* Use `fontFamily: 5`
+* Minimum readable sizes:
+
+  * Title: 20-28px
+  * Body: 16-18px
+  * Notes: 14px minimum
+* Replace:
+
+  * `"` → `『』`
+  * `()` → `「」`
+
+### Layout Rules
+
+* Canvas: 0-1200 x 0-800
+* Minimum spacing: 20px
+* Padding: 50px minimum
+* Avoid overlaps
+* Avoid emoji usage
+
+### Color Palette
+
+#### Text Colors
+
+| Purpose  | Color   |
+| -------- | ------- |
+| Title    | #1e40af |
+| Subtitle | #3b82f6 |
+| Body     | #374151 |
+| Emphasis | #f59e0b |
+
+#### Fill Colors
+
+| Semantic   | Color   |
+| ---------- | ------- |
+| Primary    | #a5d8ff |
+| Success    | #b2f2bb |
+| Warning    | #ffd8a8 |
+| Processing | #d0bfff |
+| Critical   | #ffc9c9 |
+| Planning   | #fff3bf |
+| Data       | #c3fae8 |
+| Analytics  | #eebefa |
+
+---
+
+# Visual Retrieval Optimization
+
+## Diagrams Must:
+
+* Reflect semantic structure
+* Use explicit labels
+* Show causal relationships
+* Surface dependencies
+* Match note terminology exactly
+
+## Avoid:
+
+* Ambiguous labels
+* Decorative-only diagrams
+* Inconsistent naming
+* Overcrowded layouts
+
+---
+
+# Excalidraw JSON Requirements
+
+## Required Structure
+
+```json
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin",
+  "elements": [],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
 ```
 
-**Decision tree:**
-- All notes have frontmatter → Skip to links
-- Some missing frontmatter → Add only what's missing
-- No wikilinks → Add Related sections
-- Large files (>800 words) → Flag for potential split
+## Required Element Fields
 
-### For Already-Organized Vaults (Skip Full Scan)
-
-If vault already has frontmatter:
-1. Check if `updated` field exists on all notes
-2. Check if wikilinks exist between related concepts
-3. Add what's missing only
-4. Report done - don't rebuild what's working
-
-**Time-saving rules:**
-- If frontmatter exists, don't regenerate it
-- If wikilinks exist, don't add more just for completeness
-- If folders exist, use them - don't recreate
-
-### Full Scan (When Needed)
-
-Only do comprehensive scan when:
-- Vault has no frontmatter
-- No folder structure
-- Notes >1500 words with multiple H2s
+```json
+{
+  "id": "unique-id",
+  "type": "rectangle",
+  "x": 100,
+  "y": 100,
+  "width": 200,
+  "height": 50,
+  "angle": 0,
+  "strokeColor": "#1e1e1e",
+  "backgroundColor": "transparent",
+  "fillStyle": "solid",
+  "strokeWidth": 2,
+  "strokeStyle": "solid",
+  "roughness": 1,
+  "opacity": 100,
+  "groupIds": [],
+  "roundness": {"type": 3},
+  "seed": 123456,
+  "version": 1,
+  "isDeleted": false,
+  "boundElements": null,
+  "updated": 1,
+  "link": null,
+  "locked": false
+}
+```
 
 ---
 
-## Step 1: Scan the Vault
+# Diagram Embedding Strategy
 
-Before making changes, understand the current state.
+## Recommended Pattern
 
-```bash
-# List all markdown files
-ls -la /path/to/vault
-find . -name "*.md" -type f | head -50
+Each major concept note should embed diagrams.
 
-# Look for common problems
-grep -l "# " *.md                    # Notes with H1 (should use H2+)
-grep -l " aliases:" *.md             # Notes missing aliases
-grep -l "^date:" *.md               # Notes missing dates
-grep -l "\[\[" *.md | wc -l           # Count existing wikilinks
-```
+Example:
 
-**Identify patterns:**
-- Large merged notes (>1000 words, multiple topics)
-- Inconsistent terminology (auth vs authentication vs login)
-- Missing frontmatter (no tags, no dates)
-- Orphan notes (no links to/from other notes)
-- Temporary context mixed with stable knowledge
-
----
-
-## Step 2: Analyze Problems
-
-### Problem 1: Merged Notes
-
-Search for notes covering multiple unrelated topics:
-
-```bash
-# Find large files
-find . -name "*.md" -exec wc -l {} + | sort -rn | head -20
-```
-
-**Example of bad:**
 ```md
-# Backend Notes
-- Redis
-- Kafka
-- Docker
-- OAuth
-- PostgreSQL
-```
-
-**Example of good:**
-```md
-# Redis Cache Invalidation
-```
-
-### Problem 2: Inconsistent Terminology
-
-Search for alternate terms:
-
-```bash
-grep -r "authentication\|login\|identity" --include="*.md" .
-```
-
-Pick ONE canonical term. Add aliases for others.
-
-### Problem 3: Missing Links
-
-```bash
-# Find orphan notes (no wikilinks)
-for f in *.md; do grep -q "\[\[" "$f" || echo "$f"; done
-```
-
-### Problem 4: Poor Titles
-
-```bash
-# Find vague titles
-grep -l "Interesting Stuff\|Notes\|Thoughts" *.md
-```
-
 ---
-
-## Step 3: Split Merged Notes
-
-When a note covers multiple concepts, split it into atomic notes.
-
-### Fast Split Pattern
-
-Given a note with multiple H2s (##), extract each H2 section into its own note:
-
-**Input:** Note with ## Authentication, ## Database, ## Caching sections
-**Output:** Authentication.md, Database.md, Caching.md + links between them
-
-### Direct Split Template
-
-For each H2 section in the source note:
-1. Create new file named after H2 heading
-2. Extract content between this H2 and next H2
-3. Add frontmatter with tags related to topic
-4. Add wikilinks to related concepts
-
-### Example (Before/After)
-
-**Before:** `dev-notes.md` (5 topics)
-```md
-# Development Notes
-
-## Authentication
-We use NextAuth...
-
-## Database
-PostgreSQL with Prisma...
-
-## Caching
-Redis for sessions...
-
-## Deployment
-Docker multi-stage...
-
-## Monitoring
-Sentry + Prometheus...
-```
-
-**After:** 5 files created
-
-```md
----
-title: Authentication
-tags: [auth, backend]
+title: Authentication Architecture
+tags: [architecture, auth]
 type: concept
-related: [[Database]], [[Caching]], [[Monitoring]]
----
-# Authentication
-We use NextAuth...
-```
-
-Repeat for each section. Create index note linking them all:
-
-```md
----
-title: Development Notes Index
-tags: [index, meta]
----
-# Development Notes Index
-
-Overview of development infrastructure.
-
-## Concepts
-- [[Authentication]] - NextAuth + JWT
-- [[Database]] - PostgreSQL + Prisma
-- [[Caching]] - Redis patterns
-- [[Deployment]] - Docker + K8s
-- [[Monitoring]] - Sentry + Prometheus
-
-```md
-# NextAuth Setup
-tags: [auth, backend]
-aliases: [Auth, Authentication]
 ---
 
-Purpose: User authentication with JWT tokens
+# Authentication Architecture
 
-## Configuration
-\`\`\`ts
-// auth.config.ts
-providers: [Credentials({...})]
-\`\`\`
+![[authentication-flow.excalidraw]]
 
-Related:
-- [[JWT Token Refresh]]
+## Overview
+
+JWT-based authentication flow.
+
+## Related
+
 - [[Session Management]]
-```
-
-### Splitting Guidelines
-
-- One concept per note (200-1000 words ideal)
-- Each note should be self-contained
-- Use consistent naming: `# Concept Name` not `# Notes`
-- Move examples to dedicated files if many exist
-
----
-
-## Step 4: Apply Structured Templates
-
-### Architecture Note Template
-
-```md
----
-title: [Component Name]
-tags: [architecture, backend|frontend|mobile]
-domain: [payment|auth|notifications]
-stack: [postgres, kafka, redis]
-created: [YYYY-MM-DD]
-updated: [YYYY-MM-DD]
----
-
-# [Component Name]
-
-Purpose: [One sentence what this does]
-
-## Components
-
-| Component | Responsibility |
-|-----------|----------------|
-| [Name] | [Role] |
-
-## Data Flow
-
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-
-## Failure Modes
-
-- **[Scenario]**: [Impact] → [Mitigation]
-
-## Scaling Concerns
-
-- [Consideration]
-
-## Related
-
-- [[Related Concept 1]]
-- [[Related Concept 2]]
-```
-
-### Incident Note Template
-
-```md
----
-title: [Incident Description]
-tags: [incident, resolved]
-severity: [critical|high|medium|low]
-date: [YYYY-MM-DD]
-affected: [system/component]
----
-
-# [Incident Description]
-
-## Symptoms
-
-- [Observable problem]
-
-## Root Cause
-
-[Why it happened]
-
-## Resolution
-
-[How it was fixed]
-
-## Prevention
-
-[How to avoid recurrence]
-
-## Lessons Learned
-
-[What we learned]
-
-## Related
-
-- [[Related Concept]]
-```
-
-### Decision Record Template (ADR)
-
-```md
----
-title: [Decision Title]
-tags: [adr, approved|superseded]
-status: [accepted|deprecated|superseded]
-date: [YYYY-MM-DD]
----
-
-# [Decision Title]
-
-## Status
-
-[accepted | deprecated | superseded by [[ADR-XXX]]]
-
-## Context
-
-[What prompted this decision]
-
-## Decision
-
-[What we decided]
-
-## Alternatives Considered
-
-| Alternative | Pros | Cons |
-|-------------|-----|------|
-| [Option A] | [+] | [-] |
-| [Option B] | [+] | [-] |
-
-## Consequences
-
-- [Positive outcome]
-- [Negative outcome / mitigation]
-
-## Related
-
-- [[Related ADR]]
+- [[JWT Refresh Flow]]
 ```
 
 ---
 
-## Step 5: Create Wikilinks
+# Organizational Workflow
 
-### Linking Guidelines
+## Step 1 — Quick Scan
 
-Use wikilinks for internal vault connections:
+Check:
 
-```md
-[[Note Name]]                          Link to note
-[[Note Name|Display Text]]             Custom display text
-[[Note Name#Heading]]                 Link to heading
-[[Note Name#^block-id]]                Link to block
-[[#Heading in same note]]             Same-note heading link
-```
+* Frontmatter
+* Wikilinks
+* Large files
+* Missing metadata
+* Existing diagrams
 
-### Link Types
+## Step 2 — Structural Optimization
 
-| Type | Pattern | When |
-|------|---------|------|
-| Related | `Related:\n- [[Concept]]` | Direct relationship |
-| Elaborates | `See [[Concept]] for details` | Builds on another |
-| Contrasts | `Unlike [[Concept]], this...` | Difference |
-| Depends On | `Requires [[Service]]` | Dependency |
+* Split large notes
+* Normalize terminology
+* Add metadata
+* Create links
 
-### Linking Strategy
+## Step 3 — Visual Extraction
 
-From any note, link to:
-- Direct dependencies
-- Related patterns
-- Opposite/contrasting approaches
-- Parent/child concepts
+Generate diagrams for:
 
-Avoid:
-- Too many links (>10 per note confuses retrieval)
-- Links to nothing (orphan notes)
-- Generic "see also" without specifics
+* Architecture
+* Incident timelines
+* Data flow
+* Service dependencies
+* Debugging flows
+* Operational procedures
 
----
+## Step 4 — Diagram Linking
 
-## Step 6: Add Frontmatter
+Connect:
 
-### Required Fields
+* Notes ↔ diagrams
+* Concepts ↔ architecture
+* Incidents ↔ timelines
+* ADRs ↔ tradeoff visuals
 
-```yaml
----
-title: [Clean Title]
-tags: [category, subcategory]
-created: [YYYY-MM-DD]
-updated: [YYYY-MM-DD]
----
-```
+## Step 5 — Validation
 
-### Recommended Fields
+Verify:
 
-```yaml
----
-title: [Clean Title]
-tags:
-  - [category]
-aliases: [Alternative Name, Another Name]
-created: [YYYY-MM-DD]
-updated: [YYYY-MM-DD]
-type: [concept|incident|adr|runbook|standard]
-status: [active|deprecated]
----
-```
-
-### Tag Organization
-
-Use flat tags for broad categories, nested for specificity:
-
-```yaml
-tags:
-  - architecture    # broad
-  - architecture/api # specific
-```
-
-Common tags:
-- `concept` — atomic knowledge
-- `incident` — past failures
-- `adr` — decisions
-- `runbook` — procedures
-- `standard` — team conventions
-- `pattern` — reusable solutions
-- `anti-pattern` — what to avoid
+* Links resolve
+* Diagrams open correctly
+* Naming consistency
+* Retrieval metadata quality
 
 ---
 
-## Step 7: Separate Stable vs Temporary
+# Recommended Vault Structure
 
-### Recommended Folder Structure
-
-```
+```text
 /vault
-├── /Concepts/           # Atomic knowledge (AI检索 target)
-│   ├── /Architecture/
-│   ├── /Patterns/
-│   └── /Standards/
-├── /Incidents/          # Production failures (gold for AI)
-├── /Decisions/          # ADRs
-├── /Runbooks/           # Operational procedures
-├── /Debugging/          # Troubleshooting guides
-├── /Projects/           # Project-specific
-├── /Glossary/           # Terminology
-└── /Archive/           # Temporary/context (deprioritize)
-```
-
-### Separation Rules
-
-| Stable (AI优先) | Ephemeral (Archive) |
-|----------------|-------------------|
-| Architecture | Sprint notes |
-| Patterns | Temporary research |
-| Standards | Drafts |
-| Incidents | Meeting notes |
-| Decisions | PoCs |
-
-**Rule:** If note has expiration or becomes outdated, put in `/Archive/` or delete.
-
----
-
-## Step 8: Validate Structure
-
-After changes, verify the vault is organized.
-
-### Fast Validation (3 checks)
-
-```bash
-# 1. Frontmatter check
-grep -l "^---" *.md | wc -l    # Should be all
-
-# 2. Link check  
-grep -l "\[\[" *.md | wc -l    # Should be most
-
-# 3. Large file check
-find . -name "*.md" -exec wc -l {} + | awk '$1 > 1000 {print $2}'
-```
-
-### Quality Checklist
-
-- [ ] All notes have frontmatter with tags
-- [ ] No notes >1500 words (split if needed)
-- [ ] Consistent terminology (one canonical term)
-- [ ] All wikilinks resolve
-- [ ] No orphan notes
-- [ ] Clear titles (searchable names)
-- [ ] Stable vs temporary separated
-- [ ] Related concepts linked
-
----
-
-## Principles Summary (Quick Reference)
-
-| # | Principle | Action |
-|---|-----------|--------|
-| 1 | One concept per note | Split merged notes |
-| 2 | Consistent terminology | Pick canonical term, add aliases |
-| 3 | Predictable structure | Use templates |
-| 4 | Store decisions/tradeoffs | Include WHY in notes |
-| 5 | Link like a knowledge graph | Add wikilinks |
-| 6 | Prefer insight over docs | Internal lessons, not public docs |
-| 7 | Create failure knowledge | Document incidents, bugs |
-| 8 | Separate stable vs temporary | Split knowledge from context |
-| 9 | Add metadata | Use frontmatter with tags |
-| 10 | Design for retrieval | Searchable titles, explicit keywords |
-
----
-
-## Quick Command Reference
-
-### One-Liner Commands
-
-```bash
-# Add updated date to all notes (if missing)
-for f in *.md; do sed -i 's/^created:.*/&\nupdated: 2026-05-13/' "$f"; done
-
-# Add type field to notes without it
-sed -i 's/^---\n/---\ntype: concept\n/' *.md
-
-# Find large files for splitting
-find . -name "*.md" -exec wc -l {} + | sort -rn | head -10
-
-# Count wikilinks per file
-for f in *.md; do echo "$(grep -c "\[\[" "$f") $f"; done | sort -rn
+├── /Concepts
+│   ├── /Architecture
+│   ├── /Patterns
+│   └── /Standards
+├── /Diagrams
+│   ├── /Architecture
+│   ├── /Flows
+│   ├── /Incidents
+│   └── /Mindmaps
+├── /Incidents
+├── /Decisions
+├── /Runbooks
+├── /Projects
+├── /Glossary
+└── /Archive
 ```
 
 ---
 
-## Example Transformations
+# Visual Incident Intelligence
 
-### Example 1: Scattered Backend Notes → Structured Concepts
+High-value incidents should include:
 
-**Before:**
-```
-backend.md (2500 words, covers auth, DB, caching, deployment)
-```
+1. Incident note
+2. Timeline diagram
+3. Failure flow visualization
+4. Recovery sequence
+5. Dependency graph
 
-**After:**
-```
-/Concepts/
-├── /Architecture/
-│   └── Backend Architecture.md
-├── /Architecture/
-│   ├── Authentication.md
-│   ├── Database Setup.md
-│   └── Caching Strategy.md
-├── /Patterns/
-│   └── Docker Multi-Stage Build.md
-├── /Standards/
-│   └── API Response Format.md
-└── /Decisions/
-    └── ADR-001-choose-postgres.md
-```
+Example:
 
-### Example 2: Incident → Incident Note
-
-**Before (slack message):**
-```
-had a db issue yesterday, deadlock from bad transaction order. fixed by adding retry logic
-```
-
-**After:**
 ```md
----
-title: PostgreSQL Deadlock Incident
-tags: [incident, database, resolved]
-severity: high
-date: 2026-01-15
-affected: Payment Service
----
-
 # PostgreSQL Deadlock Incident
 
+![[postgres-deadlock-timeline.excalidraw]]
+
 ## Symptoms
 
-- Payment requests hanging
-- DB CPU at 20% (not maxed)
--Timeouts after 30s
+- Transaction timeout
+- CPU spike
+- Retry storm
 
 ## Root Cause
 
-Transaction ordering inconsistency between service instances.
-Instance A: lock(order) → lock(payment)
-Instance B: lock(payment) → lock(order)
-
-## Resolution
-
-Added standardized lock ordering: always acquire locks in alphabetical order.
-
-## Prevention
-
-- Added transaction ordering linter rule
-- Documented in [[Database Concurrency Patterns]]
+Inconsistent lock acquisition ordering.
 ```
 
 ---
 
-## Usage
+# Animated Diagram Support
 
-### Trigger Phrases
+## Animation Order Strategy
 
-Use this skill when the user says:
-- "organize my notes"
-- "make notes AI-friendly"
-- "restructure for Claude"
-- "clean up knowledge base"
-- "optimize for AI retrieval"
-- "split this note"
-- "add links between these concepts"
-- Mentions of "vault", "MOC", "knowledge graph"
+Recommended sequence:
 
-### Input
+1. Title
+2. Main containers
+3. Relationships
+4. Supporting labels
+5. Detailed annotations
 
-The user should provide:
-- Path to the vault/folder
-- Any specific problem areas to focus on
-- Whether to create new folder structure
+Example:
 
-### Output
-
-The skill produces:
-- Restructured notes with proper frontmatter
-- Split notes (if needed)
-- Added/modified wikilinks
-- New folder structure (if requested
-- Summary of changes made
-
----
-
-## Retrieval Optimization Rules
-
-AI retrieval quality improves when notes contain:
-
-- Explicit nouns instead of pronouns
-- Concrete system names
-- Error messages verbatim
-- Technology names
-- Searchable keywords
-- Problem + symptom pairs
-
-**Prefer:**
-```
-PostgreSQL connection pool exhaustion
-```
-
-**Over:**
-```
-database issue
-```
-
-**Prefer:**
-```
-Kubernetes readiness probe timeout
-```
-
-**Over:**
-```
-deployment problem
+```json
+"customData": {
+  "animate": {
+    "order": 1,
+    "duration": 500
+  }
+}
 ```
 
 ---
 
-## Semantic Density
+# Retrieval Optimization Rules
 
-Good notes maximize:
-- Technical specificity
-- Causal relationships
-- Tradeoffs
-- Operational context
+## Prefer Explicit Technical Terms
 
-**Avoid filler text and narrative storytelling.**
+Prefer:
 
-**Bad:**
-"We had some issues with the deployment."
+* PostgreSQL Connection Pool Exhaustion
+* Kubernetes Readiness Probe Timeout
+* JWT Refresh Token Rotation
 
-**Good:**
-"Kubernetes rolling deployment caused 503 spikes due to readiness probe delay exceeding ALB deregistration timeout."
+Avoid:
 
-This is one of the biggest hidden factors in RAG quality.
+* DB issue
+* deployment problem
+* auth stuff
 
 ---
 
-## Chunking Rules
-
-Ideal chunk size: **200-800 words**
-
-Split when:
-- Multiple unrelated H2 sections
-- More than one root concept
-- Multiple architectural domains
-
-**Avoid:**
-- Giant reference dumps
-- Mixed troubleshooting topics
-- Long chronological logs
-
----
-
-## High-Value Knowledge Priority
-
-| Priority | Note Type | Value |
-|----------|----------|-------|
-| 1 | Incidents | Highest |
-| 2 | Architecture decisions | Highest |
-| 3 | Debugging paths | High |
-| 4 | Failure patterns | High |
-| 5 | Tradeoffs | High |
-| 6 | Internal conventions | Medium |
-| 7 | Copied docs | Low |
-| 8 | Tutorials | Low |
-| 9 | Meeting summaries | Low |
-| 10 | Generic references | Low |
-
-This helps avoid garbage accumulation.
-
----
-
-## Knowledge Decay Rules
-
-**Archive or update notes when:**
-- Technology deprecated
-- Architecture replaced
-- API changed
-- Incident no longer relevant
-
-**Mark stale notes:**
-```yaml
-status: deprecated
-replaced_by: [[New Architecture]]
-```
-
-AI systems should deprioritize stale notes. Without this, retrieval quality degrades over time.
-
----
-
-## RAG Metadata
-
-Add retrieval-centric fields to frontmatter:
+# Metadata Standards
 
 ```yaml
 ---
 title:
 type:
-domain:              # e.g., payment, auth, notifications
-stack:              # e.g., postgres, kafka, redis
-services:            # e.g., payment-service, api-gateway
-keywords:            # search terms
-status:              # active, deprecated, verified
-confidence:          # high, medium, low - how reliable is this info
-last_verified:        # YYYY-MM-DD
+domain:
+stack:
+services:
+keywords:
+status:
+confidence:
+last_verified:
 related:
+diagram:
+visual_type:
 ---
 ```
 
-**Most important for RAG:** `keywords`, `services`, `confidence`, `last_verified`
+## New Visual Metadata Fields
+
+| Field       | Purpose                        |
+| ----------- | ------------------------------ |
+| diagram     | Related Excalidraw file        |
+| visual_type | architecture / flow / timeline |
+| animation   | true/false                     |
+| layout      | hierarchy / matrix / freeform  |
 
 ---
 
-## Operational Intelligence
+# Knowledge Graph + Visual Graph
 
-Capture in dedicated notes:
-- Failure symptoms
-- Metrics anomalies
-- Error messages verbatim
-- Log patterns
-- Alert configurations
-- Recovery steps
-- Escalation paths
+The vault should function as:
 
-These notes are highly valuable for AI troubleshooting.
+1. Semantic graph
+2. Visual graph
+3. Retrieval graph
+4. Operational intelligence system
 
-**Example:**
-```md
----
-title: Payment Service 503 Errors
-keywords: [503, ALB, readiness, timeout]
-services: [payment-service, kubernetes]
+Diagrams should reinforce retrieval structure.
+
 ---
 
-# Payment Service 503 Errors
+# Common Mistakes
 
-## Symptoms
-- ALB returned 503 during rolling deployment
-- Error rate spiked to 15%
-- Duration: 2-3 minutes
+## Organization Mistakes
 
-## Root Cause
-readinessProbe.initialDelaySeconds was 10s but app needed 30s cold start.
+* Giant mixed-topic notes
+* Missing metadata
+* Broken wikilinks
+* Generic titles
+* Stale knowledge
 
-## Fix
-Increased initialDelaySeconds to 35s.
+## Excalidraw Mistakes
+
+* Tiny unreadable text
+* Overlapping elements
+* Low contrast colors
+* Missing padding
+* Decorative diagrams without semantics
+
+---
+
+# Output Requirements
+
+## For Organization Tasks
+
+Provide:
+
+* Files modified
+* Metadata added
+* Notes split
+* Links created
+* Structure changes
+
+## For Diagram Tasks
+
+Provide:
+
+* Diagram type selected
+* File path
+* Output format
+* Embedding instructions
+* Animation details if applicable
+
+---
+
+# Example Hybrid Output
+
+```text
+Generated:
+- Authentication.md
+- JWT Refresh Flow.md
+- authentication-architecture.excalidraw
+- auth-dependency-map.excalidraw
+
+Changes:
+- Added frontmatter
+- Added wikilinks
+- Split monolithic backend.md
+- Created architecture visualization
+- Added retrieval metadata
 ```
 
 ---
 
-## Avoid Storing
+# High-Value Knowledge Priority
 
-**Do not store:**
-- Raw copied documentation (link instead)
-- Temporary AI chats
-- Generic tutorials (link instead)
-- Low-context snippets
-- Duplicated notes
-- Vague brainstorming
-- Obsolete drafts
-
-This prevents vault entropy.
-
----
-
-## Naming Conventions
-
-**Prefer:**
-- PostgreSQL Connection Pooling
-- JWT Refresh Token Flow
-- Kubernetes Readiness Probes
-
-**Avoid:**
-- DB Stuff
-- Auth Notes
-- Deployment Ideas
-
-Explicit searchable naming matters more than people think.
+| Priority | Type                   |
+| -------- | ---------------------- |
+| 1        | Incidents              |
+| 2        | Architecture diagrams  |
+| 3        | ADRs                   |
+| 4        | Debugging flows        |
+| 5        | Failure visualizations |
+| 6        | Operational runbooks   |
+| 7        | Generic references     |
 
 ---
 
-## Context Window Optimization
+# Final Principle
 
-Claude Skills perform better when:
-- Notes are self-contained
-- Assumptions are explicit
-- Dependencies are linked
-- References are localized
+> Great AI knowledge systems are both semantically structured and visually navigable.
 
-**Avoid requiring AI to traverse 10+ notes to understand one concept.**
+Text explains.
 
----
+Diagrams compress complexity.
 
-## Human + AI Co-Design
-
-Notes should be:
-- Understandable by humans
-- Retrievable by AI
-- Maintainable over years
-
-**Do not sacrifice readability purely for embeddings.**
-
----
-
-## Knowledge Lifecycle
-
-Notes progress through stages:
-
-1. **Capture** — Initial note from incident/research
-2. **Refine** — Add context, fix errors
-3. **Link** — Connect to related concepts
-4. **Validate** — Verify accuracy, update confidence
-5. **Retrieve** — Use in practice
-6. **Archive/Delete** — Mark stale or remove
-
-**Unmaintained knowledge reduces AI quality.**
-
----
-
-## Related Skills
-
-- [[obsidian-markdown]] — For creating new notes with proper syntax
-- [[obsidian-bases]] — For setting up new vaults from scratch
-
-See [[obsidian-markdown]] for syntax reference (wikilinks, embeds, callouts, properties).
+Together they create high-quality retrieval systems for humans and AI.
