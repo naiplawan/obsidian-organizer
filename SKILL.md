@@ -1,8 +1,8 @@
 ---
 name: obsidian-organizer
-description: "Organize Obsidian notes for AI retrieval and generate Excalidraw visualizations. Apply this skill whenever the user mentions organizing, restructuring, optimizing, visualizing, diagramming, or improving Obsidian vaults, knowledge bases, workflows, architectures, or note collections. Use it when users say 'organize my notes', 'make notes AI-friendly', 'restructure for Claude retrieval', 'clean up knowledge base', 'create diagrams', 'draw architecture', 'generate Excalidraw', 'visualize workflow', 'flowchart', 'mind map', or when working with MOCs, wikilinks, vault architecture, and visual knowledge systems. This skill transforms scattered notes into atomic, interlinked knowledge optimized for AI assistants, Claude Skills, RAG systems, and Excalidraw-based visual retrieval."
+description: "Organize Obsidian notes and brownfield codebase documentation for AI retrieval, Spec Kit-style planning, and Excalidraw visualizations. Apply this skill whenever the user mentions organizing, restructuring, optimizing, visualizing, diagramming, or improving Obsidian vaults, knowledge bases, workflows, architectures, note collections, or brownfield project documentation. Use it when users say 'organize my notes', 'make notes AI-friendly', 'restructure for Claude retrieval', 'clean up knowledge base', 'read this codebase and document it', 'document this brownfield project', 'create Spec Kit docs', 'speckit documentation', 'generate specs from code', 'create diagrams', 'draw architecture', 'generate Excalidraw', 'visualize workflow', 'flowchart', 'mind map', or when working with MOCs, wikilinks, vault architecture, codebase documentation, and visual knowledge systems. This skill transforms scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for AI assistants, Claude Skills, RAG systems, Spec Kit-style delivery, and Excalidraw-based visual retrieval."
 metadata:
-  version: 2.0.0
+  version: 2.1.0
   capabilities:
     - obsidian-organization
     - rag-optimization
@@ -12,6 +12,9 @@ metadata:
     - excalidraw-generation
     - architecture-visualization
     - animated-diagrams
+    - brownfield-codebase-documentation
+    - spec-kit-style-documentation
+    - evidence-backed-repository-analysis
 ---
 
 # Obsidian Organizer + Excalidraw Visual Knowledge System
@@ -26,6 +29,8 @@ This skill combines:
 * Excalidraw visualization generation
 * Architecture and workflow diagrams
 * Visual concept mapping
+* Brownfield codebase documentation
+* Spec Kit-style specifications, plans, and task breakdowns
 
 ---
 
@@ -42,6 +47,7 @@ AI systems benefit from:
 * Structured metadata
 * Visual representations
 * Diagram-based contextual understanding
+* Code references that tie documentation back to real implementation
 
 This skill optimizes both:
 
@@ -51,6 +57,30 @@ This skill optimizes both:
 ---
 
 # Unified Workflow
+
+## Slash Help / Mode Selection
+
+When the user types `/`, `/help`, `/mode`, `/modes`, or asks what this skill can do, present this mode selector before taking action:
+
+```text
+Obsidian Organizer modes:
+
+1. Knowledge Organization
+   Clean up notes, split large files, fix frontmatter, add wikilinks, and improve retrieval metadata.
+
+2. Visual Knowledge Generation
+   Create Excalidraw diagrams, architecture maps, flowcharts, timelines, and mind maps.
+
+3. Hybrid Knowledge System
+   Combine structured Obsidian notes, linked concepts, metadata, and embedded diagrams.
+
+4. Brownfield Codebase to Spec Kit-Style Docs
+   Read an existing repository and generate evidence-backed PROJECT-HOME, constitution, architecture, spec, plan, tasks, contracts, and diagrams.
+
+Reply with 1, 2, 3, or 4, or describe what you want organized.
+```
+
+If the user already clearly requested a mode, do not stop for selection. Continue with the matching workflow and state the selected mode briefly.
 
 ## Mode 1 — Knowledge Organization
 
@@ -92,6 +122,26 @@ Recommended for:
 * ADR repositories
 * Operational intelligence vaults
 
+## Mode 4 — Brownfield Codebase to Spec Kit-Style Docs
+
+Used when the source material is an existing repository instead of an existing note set.
+
+Combines:
+
+1. Read-only codebase discovery
+2. Evidence-backed architecture and behavior extraction
+3. Spec Kit-style documentation artifacts
+4. Obsidian-friendly wikilinks and metadata
+5. Excalidraw diagrams for system structure and flows
+
+Recommended for:
+
+* Brownfield application onboarding
+* Turning existing implementation into living specs
+* Preparing AI agents to safely modify a legacy codebase
+* Creating implementation-grounded plans before refactors
+* Building project knowledge bases from source code
+
 ---
 
 # Trigger Detection
@@ -106,6 +156,20 @@ Recommended for:
 * fix frontmatter
 * clean up knowledge base
 * make AI-friendly
+
+## Brownfield / Spec Kit Triggers
+
+* read this codebase and document it
+* document this brownfield project
+* organize documentation from the repo
+* generate specs from code
+* create Spec Kit docs
+* speckit documentation
+* spec-driven docs
+* make a plan from the existing code
+* extract architecture from this codebase
+* create implementation-grounded tasks
+* prepare this repo for AI coding agents
 
 ## Excalidraw / Visualization Triggers
 
@@ -163,6 +227,14 @@ Recommended for:
 4. Related diagram
 5. Searchable keywords
 6. Stable naming
+
+## Every Brownfield Documentation Claim Should Have:
+
+1. Source file reference
+2. Implementation evidence
+3. Confidence level
+4. Known gaps or assumptions
+5. Relationship to specs, plans, tasks, or diagrams
 
 ---
 
@@ -367,6 +439,247 @@ Verify:
 
 ---
 
+# Brownfield Codebase Documentation Workflow
+
+Use this workflow when the user asks to read an existing codebase and organize documentation in a Spec Kit-like structure.
+
+## Step 1 — Repository Discovery
+
+Start with read-only inspection before writing docs:
+
+* Identify language, framework, package manager, and entry points
+* Locate routing, API boundaries, state management, data models, persistence, config, auth, jobs, integrations, and tests
+* Read existing documentation first if present
+* Build a file map with high-value source paths
+* Note generated files, vendored files, build outputs, and ignored directories to avoid documenting noise
+
+Prefer fast search tools:
+
+```text
+rg --files
+rg "router|route|controller|handler|model|schema|service|repository|provider|bloc|cubit|store|migration|endpoint|auth"
+```
+
+## Step 2 — Evidence Ledger
+
+Maintain an internal evidence ledger while analyzing:
+
+| Claim | Evidence | Confidence |
+| ----- | -------- | ---------- |
+| What the system does | File paths, symbols, tests, config | high / medium / low |
+| How data flows | Handlers, services, repositories, schemas | high / medium / low |
+| External contracts | API routes, DTOs, OpenAPI, clients | high / medium / low |
+| Operational behavior | env vars, jobs, scripts, deploy config | high / medium / low |
+
+Do not invent requirements. If intent is unclear, mark it as inferred and explain the evidence.
+
+## Step 3 — Spec Kit-Style Artifact Set
+
+Create artifacts that mirror Spec Kit habits while remaining useful in Obsidian.
+
+Recommended structure:
+
+```text
+/Projects/<Project Name>/
+├── PROJECT-HOME.md
+├── constitution.md
+├── architecture.md
+├── glossary.md
+├── evidence-ledger.md
+├── /specs/
+│   └── /<capability-or-feature>/
+│       ├── spec.md
+│       ├── plan.md
+│       ├── tasks.md
+│       ├── research.md
+│       ├── data-model.md
+│       ├── quickstart.md
+│       └── /contracts/
+├── /Diagrams/
+│   ├── system-context.excalidraw
+│   ├── architecture.excalidraw
+│   └── critical-flow.excalidraw
+├── /Runbooks/
+├── /Decisions/
+└── /Archive/
+```
+
+Use the existing vault structure if one exists. Do not force a new top-level layout when the repository already has a documentation convention.
+
+## Step 4 — Artifact Responsibilities
+
+### PROJECT-HOME.md
+
+Purpose: entry point for AI and human readers.
+
+Include:
+
+* What the project does
+* Primary user or system workflows
+* Tech stack
+* Main folders and entry points
+* Key specs
+* Key diagrams
+* Current documentation confidence
+
+### constitution.md
+
+Purpose: stable engineering rules extracted from the codebase.
+
+Include:
+
+* Architectural principles currently followed
+* Naming and module conventions
+* Testing expectations
+* Security and data handling constraints
+* Integration boundaries
+* Do-not-break contracts
+
+Mark each item as:
+
+* `observed` when directly supported by code
+* `inferred` when derived from repeated patterns
+* `proposed` when it is a recommendation
+
+### architecture.md
+
+Purpose: explain how the system is assembled.
+
+Include:
+
+* Runtime architecture
+* Module boundaries
+* Data flow
+* External services
+* Storage model
+* Configuration and environment dependencies
+* Test architecture
+* Diagram embeds
+
+### specs/<capability>/spec.md
+
+Purpose: describe behavior already implemented or required.
+
+Use this structure:
+
+```md
+---
+title:
+type: spec
+project:
+capability:
+status: observed
+confidence:
+last_verified:
+source_paths:
+related:
+---
+
+# [Capability] Specification
+
+## Summary
+
+## User / System Goals
+
+## Functional Requirements
+
+## Non-Functional Requirements
+
+## Current Behavior
+
+## Edge Cases
+
+## Acceptance Criteria
+
+## Source Evidence
+```
+
+### specs/<capability>/plan.md
+
+Purpose: implementation-aware delivery plan.
+
+Include:
+
+* Current implementation summary
+* Target change or documentation goal
+* Affected modules
+* Data model or contract impact
+* Test strategy
+* Risks
+* Rollout or migration notes
+
+### specs/<capability>/tasks.md
+
+Purpose: actionable task breakdown grounded in real files.
+
+Use checkboxes:
+
+```md
+- [ ] T001 Inspect [path] to confirm current behavior
+- [ ] T002 Update [path] for [specific change]
+- [ ] T003 Add or update tests in [path]
+- [ ] T004 Update documentation links and diagrams
+```
+
+Tasks should name concrete paths whenever possible.
+
+### specs/<capability>/research.md
+
+Purpose: capture unknowns and tradeoffs.
+
+Include:
+
+* Questions answered by code inspection
+* Open questions
+* Alternatives observed or considered
+* Decisions needed from humans
+
+### specs/<capability>/data-model.md
+
+Purpose: document entities, schemas, DTOs, and persisted state.
+
+Include:
+
+* Entities
+* Fields
+* Relationships
+* Validation rules
+* Persistence layer
+* Source evidence
+
+### specs/<capability>/contracts/
+
+Purpose: document API, event, file, CLI, or integration contracts.
+
+Use markdown unless a formal schema already exists. Link to source route handlers, request/response types, generated clients, or tests.
+
+## Step 5 — Brownfield Diagram Set
+
+Generate diagrams when they clarify the codebase:
+
+| Diagram | When to Create |
+| ------- | -------------- |
+| System Context | Project has external users, services, or APIs |
+| Container / Module Map | Codebase has meaningful internal boundaries |
+| Critical Flow | Auth, payment, sync, import/export, onboarding, or core business process |
+| Data Model | Entities and relationships are central |
+| Test Strategy Map | Tests are scattered or onboarding is difficult |
+
+Embed diagrams from PROJECT-HOME.md, architecture.md, and relevant specs.
+
+## Step 6 — Validation
+
+Before finishing:
+
+* Check every important claim has source evidence
+* Mark unverified claims as inferred or unknown
+* Ensure wikilinks resolve or clearly target planned notes
+* Verify docs do not contradict existing README, tests, or code
+* Keep generated docs separate from source code unless the user requested inline code comments
+* Summarize files created or modified
+
+---
+
 # Recommended Vault Structure
 
 ```text
@@ -479,6 +792,10 @@ last_verified:
 related:
 diagram:
 visual_type:
+brownfield:
+source_paths:
+spec_artifact:
+evidence_confidence:
 ---
 ```
 
@@ -490,6 +807,15 @@ visual_type:
 | visual_type | architecture / flow / timeline |
 | animation   | true/false                     |
 | layout      | hierarchy / matrix / freeform  |
+
+## Brownfield Metadata Fields
+
+| Field               | Purpose                                      |
+| ------------------- | -------------------------------------------- |
+| brownfield          | true when generated from existing code       |
+| source_paths        | Implementation files supporting the note     |
+| spec_artifact       | home / constitution / spec / plan / task     |
+| evidence_confidence | high / medium / low based on source support  |
 
 ---
 
@@ -548,6 +874,18 @@ Provide:
 * Embedding instructions
 * Animation details if applicable
 
+## For Brownfield Spec Kit-Style Documentation Tasks
+
+Provide:
+
+* Repository areas inspected
+* Documentation structure created
+* Spec Kit-style artifacts generated
+* Key source paths used as evidence
+* Diagrams generated or recommended
+* Unknowns and inferred claims
+* Validation performed
+
 ---
 
 # Example Hybrid Output
@@ -565,6 +903,30 @@ Changes:
 - Split monolithic backend.md
 - Created architecture visualization
 - Added retrieval metadata
+```
+
+## Example Brownfield Output
+
+```text
+Generated:
+- Projects/CheckName/PROJECT-HOME.md
+- Projects/CheckName/constitution.md
+- Projects/CheckName/architecture.md
+- Projects/CheckName/evidence-ledger.md
+- Projects/CheckName/specs/name-validation/spec.md
+- Projects/CheckName/specs/name-validation/plan.md
+- Projects/CheckName/specs/name-validation/tasks.md
+- Projects/CheckName/Diagrams/system-context.excalidraw
+
+Evidence:
+- backend/api/routes.py
+- backend/domain/name_checker.py
+- frontend/src/features/check-name/
+- tests/test_name_checker.py
+
+Unknowns:
+- Production deployment topology was not present in the repository.
+- Rate limiting behavior is inferred from middleware naming and needs confirmation.
 ```
 
 ---

@@ -1,13 +1,16 @@
 # Obsidian Organizer
 
-**Version 2.0** — Now with Excalidraw visualization support
+**Version 2.1** — Now with brownfield Spec Kit-style documentation support
 
-A Claude Skill for organizing Obsidian vaults specifically for AI retrieval, RAG systems, and Excalidraw visual knowledge systems.
+A Claude Skill for organizing Obsidian vaults and brownfield codebase documentation specifically for AI retrieval, RAG systems, Spec Kit-style planning, and Excalidraw visual knowledge systems.
 
-> Transform scattered notes into atomic, interlinked knowledge optimized for AI assistants and visual reasoning.
+> Transform scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for AI assistants and visual reasoning.
 
-## What's New in v2.0
+## What's New in v2.1
 
+- **Brownfield Codebase Documentation** — Read existing repositories and generate implementation-grounded docs
+- **Spec Kit-Style Artifacts** — Create `spec.md`, `plan.md`, `tasks.md`, `research.md`, `data-model.md`, contracts, and project constitution docs
+- **Evidence Ledger** — Tie documentation claims back to concrete source files and confidence levels
 - **Excalidraw Integration** — Generate architecture diagrams, flowcharts, mind maps, timelines
 - **Hybrid Knowledge Entries** — Note + diagram pairs with proper embedding
 - **Visual Metadata** — `diagram`, `visual_type`, `animation`, `layout` fields
@@ -22,6 +25,8 @@ A Claude Skill for organizing Obsidian vaults specifically for AI retrieval, RAG
 - **Applies** templates (incidents, ADRs, runbooks, architecture notes)
 - **Marks** stale/deprecated knowledge for lifecycle management
 - **Validates** structure with fast checks
+- **Reads** brownfield codebases to extract architecture, workflows, contracts, data models, and test strategy
+- **Generates** Spec Kit-style documentation grounded in source evidence
 
 ## When to Use
 
@@ -38,6 +43,13 @@ Trigger phrases:
 - "visualize workflow"
 - "flowchart"
 - "mind map"
+- "read this codebase and document it"
+- "document this brownfield project"
+- "create Spec Kit docs"
+- "speckit documentation"
+- "generate specs from code"
+- "extract architecture from this codebase"
+- "make a plan from the existing code"
 - Mentions of "vault", "MOC", "knowledge graph", "Excalidraw", "diagram"
 
 ## Core Principles
@@ -76,6 +88,11 @@ diagram:            # filename.excalidraw
 visual_type:        # architecture, flow, timeline, mindmap
 animation:          # true, false
 layout:             # hierarchy, matrix, freeform
+# v2.1 brownfield fields
+brownfield:         # true, false
+source_paths:       # source files supporting the note
+spec_artifact:      # home, constitution, spec, plan, task
+evidence_confidence:# high, medium, low
 ---
 ```
 
@@ -98,6 +115,17 @@ layout:             # hierarchy, matrix, freeform
 | 3 | ADRs + tradeoff visuals | High |
 | 4 | Debugging flows | High |
 | 5 | Failure visualizations | High |
+
+## Brownfield Spec Kit-Style Priority (v2.1)
+
+| Priority | Type | Value |
+|----------|------|-------|
+| 1 | PROJECT-HOME + architecture | Highest |
+| 2 | Constitution / engineering rules | Highest |
+| 3 | Capability specs | High |
+| 4 | Plans and implementation tasks | High |
+| 5 | Contracts and data models | High |
+| 6 | Evidence ledger and unknowns | High |
 
 ## Folder Structure
 
@@ -122,7 +150,52 @@ Recommended vault organization:
 └── /Archive/           # Deprecated/temporary
 ```
 
+Brownfield project documentation can also be organized under:
+
+```
+/Projects/<Project Name>/
+├── PROJECT-HOME.md
+├── constitution.md
+├── architecture.md
+├── glossary.md
+├── evidence-ledger.md
+├── /specs/
+│   └── /<capability-or-feature>/
+│       ├── spec.md
+│       ├── plan.md
+│       ├── tasks.md
+│       ├── research.md
+│       ├── data-model.md
+│       ├── quickstart.md
+│       └── /contracts/
+├── /Diagrams/
+├── /Runbooks/
+├── /Decisions/
+└── /Archive/
+```
+
 ## Usage Modes
+
+### Slash Help
+Use `/`, `/help`, `/mode`, or `/modes` to ask the skill to show a mode selector:
+
+```text
+Obsidian Organizer modes:
+
+1. Knowledge Organization
+   Clean up notes, split large files, fix frontmatter, add wikilinks, and improve retrieval metadata.
+
+2. Visual Knowledge Generation
+   Create Excalidraw diagrams, architecture maps, flowcharts, timelines, and mind maps.
+
+3. Hybrid Knowledge System
+   Combine structured Obsidian notes, linked concepts, metadata, and embedded diagrams.
+
+4. Brownfield Codebase to Spec Kit-Style Docs
+   Read an existing repository and generate evidence-backed PROJECT-HOME, constitution, architecture, spec, plan, tasks, contracts, and diagrams.
+
+Reply with 1, 2, 3, or 4, or describe what you want organized.
+```
 
 ### Quick Mode (Default)
 For already-organized vaults - just add what's missing:
@@ -143,6 +216,16 @@ For scattered notes that need restructuring:
 - "Add links" → Creates wikilinks
 - "Fix frontmatter" → Adds missing fields
 - "Create structure" → Sets up folders + templates
+
+### Brownfield Spec Kit Mode
+For existing repositories:
+1. Scan the codebase read-only
+2. Identify architecture, capabilities, contracts, data models, tests, and operational behavior
+3. Create an evidence ledger with source paths and confidence levels
+4. Generate Spec Kit-style docs: `PROJECT-HOME.md`, `constitution.md`, `architecture.md`, `spec.md`, `plan.md`, `tasks.md`, `research.md`, `data-model.md`, and contracts
+5. Add Obsidian wikilinks and retrieval metadata
+6. Generate architecture and workflow diagrams where useful
+7. Validate that important claims are backed by code evidence
 
 ## Knowledge Lifecycle
 
