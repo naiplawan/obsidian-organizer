@@ -1,10 +1,10 @@
 # Obsidian Organizer
 
-**Version 2.1** — Now with brownfield Spec Kit-style documentation support
+**Version 2.2.5** — Added communication mode guidance and template mapping for consistent output
 
 A Claude Skill for organizing Obsidian vaults and brownfield codebase documentation specifically for AI retrieval, RAG systems, Spec Kit-style planning, and Excalidraw visual knowledge systems.
 
-> Transform scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for AI assistants and visual reasoning.
+> Transform scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for people first and AI-assisted retrieval.
 
 ## What's New in v2.1
 
@@ -15,6 +15,40 @@ A Claude Skill for organizing Obsidian vaults and brownfield codebase documentat
 - **Hybrid Knowledge Entries** — Note + diagram pairs with proper embedding
 - **Visual Metadata** — `diagram`, `visual_type`, `animation`, `layout` fields
 - **Animated Diagram Support** — Sequence ordering for Excalidraw animations
+
+## What's New in v2.2
+
+- **Evidence Research Protocol** — Formal claim registry (`E###`) with confidence grading
+- **Claim Reconciliation** — Conflicts between code/docs/tests must be documented before finalizing
+- **Validation Checklist** — Brownfield artifacts must pass evidence validation before delivery
+- **Brownfield Assertions Safety** — Inferred behavior is clearly labeled and never promoted as observed
+
+## What's New in v2.2.1
+
+- **Human-first output contract** — Response structure now begins with summary, impact, and next actions before evidence details.
+- **Readability defaults** — Jargon-reduction, stable headings, and decision-first organization for mixed-audience users.
+- **Human usability validation** — Explicit checks for clarity, actionability, and owner/condition on recommended steps.
+
+## What's New in v2.2.2
+
+- **People-first writing defaults** — Topic sentence first, active voice, short sections, and sentence-case headings.
+- **Human-facing artifact pattern** — Explicitly includes executive summary, architecture, plans, tasks, and evidence layers.
+- **Audience-aware guidance** — Encourages defining audience and writing level before technical detail.
+
+## What's New in v2.2.3
+
+- **Reusable people-review template** — Added a required `## For people` block for non-technical consumption.
+- **Artifact section template** — Added consistent section skeleton for Brownfield specs and plans.
+
+## What's New in v2.2.4
+
+- **Copy-paste templates added** — `PROJECT-HOME`, `architecture`, `spec`, `plan`, `tasks`, and `evidence-ledger` templates now included in skill guidance.
+- **Human-ready artifact defaults** — Every template includes a person-facing summary + risks + next actions block before technical evidence.
+
+## What's New in v2.2.5
+
+- **Communication modes added** — Explicit Human / Technical / Audit behavior for consistent output.
+- **Template mapping matrix** — Enforces minimum required human + technical + evidence sections per artifact.
 
 ## What It Does
 
@@ -271,4 +305,4 @@ MIT
 
 ---
 
-**Philosophy:** This skill organizes notes not for human browsing, but for AI retrieval. The key shift is designing for semantic search and machine reasoning rather than visual aesthetics.
+**Philosophy:** This skill organizes notes for people first and AI retrieval second. The key shift is designing for clear human reasoning, then making that clear structure machine-searchable.

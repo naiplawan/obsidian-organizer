@@ -2,7 +2,7 @@
 name: obsidian-organizer
 description: "Organize Obsidian notes and brownfield codebase documentation for AI retrieval, Spec Kit-style planning, and Excalidraw visualizations. Apply this skill whenever the user mentions organizing, restructuring, optimizing, visualizing, diagramming, or improving Obsidian vaults, knowledge bases, workflows, architectures, note collections, or brownfield project documentation. Use it when users say 'organize my notes', 'make notes AI-friendly', 'restructure for Claude retrieval', 'clean up knowledge base', 'read this codebase and document it', 'document this brownfield project', 'create Spec Kit docs', 'speckit documentation', 'generate specs from code', 'create diagrams', 'draw architecture', 'generate Excalidraw', 'visualize workflow', 'flowchart', 'mind map', or when working with MOCs, wikilinks, vault architecture, codebase documentation, and visual knowledge systems. This skill transforms scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for AI assistants, Claude Skills, RAG systems, Spec Kit-style delivery, and Excalidraw-based visual retrieval."
 metadata:
-  version: 2.1.0
+  version: 2.2.5
   capabilities:
     - obsidian-organization
     - rag-optimization
@@ -15,6 +15,9 @@ metadata:
     - brownfield-codebase-documentation
     - spec-kit-style-documentation
     - evidence-backed-repository-analysis
+    - evidence-ledger-reconciliation
+    - claim-verification
+    - human-first-documentation
 ---
 
 # Obsidian Organizer + Excalidraw Visual Knowledge System
@@ -53,6 +56,422 @@ This skill optimizes both:
 
 1. Text retrieval
 2. Visual comprehension
+
+Humans also benefit from:
+
+* Clear summaries before implementation detail
+* Explicit assumptions and tradeoffs
+* Stable names and predictable section ordering
+* Actionable recommendations with owners
+* Confidence labels that prevent over-trust
+
+## Human-First Workflow
+
+For person-facing outputs, use this structure:
+
+1. Summary (short, plain language)
+2. What changed and why
+3. Risks / uncertainties / unknowns
+4. Recommended next actions
+5. Evidence (only if requested or required by audit mode)
+
+Keep evidence IDs and file references in a dedicated section at the end.
+
+### Person-Review Template (Default)
+
+Add this block to each artifact that is shared with a non-technical reviewer:
+
+```md
+## For people
+
+### Summary
+- Who this helps:
+- What this document answers:
+- What changed:
+
+### Why this matters
+- Problem it addresses:
+- Impact if ignored:
+
+### Risks and unknowns
+- Known risks:
+- Unknowns / dependencies:
+- Confidence:
+
+### Recommended next actions
+- Owner:
+- Action:
+- Deadline / trigger:
+
+### Open questions
+- ...
+```
+
+Use it before implementation details and before any evidence table.
+
+### Copy-Paste Artifact Templates
+
+### PROJECT-HOME.md
+
+```md
+---
+title: Project Home
+type: project-home
+status: draft
+confidence: medium
+last_verified: YYYY-MM-DD
+related: []
+diagram:
+evidence_confidence: medium
+---
+
+# Project Home
+
+## For people
+
+### Summary
+- Who this helps:
+- What this document answers:
+- What changed:
+
+### Why this matters
+- Problem this solves:
+- Expected benefit:
+
+### Risks and unknowns
+- Known risks:
+- Unknowns / dependencies:
+- Confidence:
+
+### Recommended next actions
+- Owner:
+- Action:
+- Deadline / trigger:
+
+### Open questions
+- ...
+
+## Purpose
+This is the one-page entry point for people and agents.
+
+## What this project does
+
+## Current implementation
+
+## How to use the docs
+
+## Evidence
+- E000 references:
+```
+
+### architecture.md
+
+```md
+---
+title: Architecture
+type: architecture
+status: draft
+confidence: medium
+last_verified: YYYY-MM-DD
+related: []
+diagram:
+evidence_confidence: medium
+---
+
+# Architecture
+
+## For people
+
+### Summary
+- Who this helps:
+- What changed:
+- Why this matters:
+
+### Why this matters
+- Problem this solves:
+- Impact if ignored:
+
+### Recommended next actions
+- Owner:
+- Action:
+- Deadline / trigger:
+
+## Purpose
+Describe module/runtime structure in simple language first.
+
+## Current behavior
+
+## Data flow
+
+## Operational behavior
+
+## Evidence
+- E000 references:
+```
+
+### specs/<capability>/spec.md
+
+```md
+---
+title: Spec
+type: spec
+status: observed
+confidence: medium
+last_verified: YYYY-MM-DD
+source_paths: []
+evidence_confidence: medium
+spec_artifact: spec
+---
+
+# [Capability] Spec
+
+## For people
+
+### Summary
+- Who this helps:
+- What this document answers:
+- What changed:
+
+### Why this matters
+- Problem this solves:
+- Impact if ignored:
+
+### Risks and unknowns
+- Known risks:
+- Unknowns / dependencies:
+- Confidence:
+
+### Recommended next actions
+- Owner:
+- Action:
+- Deadline / trigger:
+
+## Purpose
+
+## Current behavior
+
+## Intended behavior
+
+## Functional requirements
+
+## Non-functional requirements
+
+## Evidence
+- E###:
+```
+
+### specs/<capability>/plan.md
+
+```md
+---
+title: Plan
+type: plan
+status: draft
+confidence: low
+last_verified: YYYY-MM-DD
+related: []
+evidence_confidence: medium
+spec_artifact: plan
+---
+
+# [Capability] Plan
+
+## For people
+
+### Summary
+- Why we are planning this:
+- What decision is needed:
+
+### Why this matters
+- Decision impact:
+- Cost or risk if delayed:
+
+### Recommended next actions
+- Owner:
+- Action:
+- Deadline / trigger:
+
+## Scope
+
+## Current implementation summary
+
+## Proposed changes
+
+## Risks and migration notes
+
+## Evidence
+- E###:
+```
+
+### specs/<capability>/tasks.md
+
+```md
+---
+title: Tasks
+type: tasks
+status: draft
+confidence: medium
+last_verified: YYYY-MM-DD
+related: []
+evidence_confidence: medium
+spec_artifact: tasks
+---
+
+# [Capability] Tasks
+
+## For people
+
+### Summary
+- Who owns execution:
+- Expected outcome:
+- Target date:
+
+## Edge cases
+
+## Current behavior
+
+## Tasks
+- [ ] T001 Inspect [path] to confirm current behavior
+- [ ] T002 Update [path] for [specific change]
+- [ ] T003 Add or update tests in [path]
+- [ ] T004 Update docs and diagrams
+
+## Evidence
+- E###
+```
+
+### evidence-ledger.md
+
+```md
+---
+title: Evidence Ledger
+type: evidence-ledger
+status: maintained
+last_verified: YYYY-MM-DD
+---
+
+# Evidence Ledger
+
+## For people
+
+### Summary
+- Why this ledger matters:
+- Confidence posture:
+
+## Claim Registry
+
+| id | claim | evidence | confidence | status | verification_note |
+| --- | --- | --- | --- | --- | --- |
+| E001 | ... | `path:line-range` | medium | observed | ...
+| E002 | ... | `path` + tests | high | observed | ...
+```
+
+### Human Readability Rules
+
+* Prefer one-sentence purpose statements before detailed lists.
+* Keep headings consistent across generated notes.
+* Keep critical decisions grouped near the top of each long document.
+* Define terms before use and avoid unexplained jargon.
+
+### People-Focused Writing Rules
+
+Use these output standards for mixed audiences (adapted from plain-language and developer style guidance):
+
+* Write for the target audience first; define who the note is for before heavy detail.
+* Put a short topic sentence at the start of each section.
+* Use active voice and state what changed/what to do clearly.
+* Use short paragraphs, simple words, and one core idea per section.
+* Prefer sentence-case headings and consistent levels (`#`, `##`, `###`) without skipping levels.
+* Keep headings action- or concept-focused and predictable across artifacts.
+* Explain any unavoidable technical term at first use.
+
+## Communication Modes
+
+Choose mode explicitly based on the user and task:
+
+### Human mode (default for mixed-audience users)
+
+1. Start with `## For people`.
+2. Include only concise context and impact statements.
+3. Delay evidence tables until the end.
+4. End with decisions and next steps (owner, trigger, due date).
+
+### Technical mode (developer or implementation tasks)
+
+1. Keep artifact templates but include full evidence traceability immediately where claims are made.
+2. Keep section headings compact and task-oriented.
+3. Include `claim` IDs and file references on first mention when available.
+
+### Audit mode (when confidence is low or conflict is found)
+
+1. State assumptions explicitly.
+2. Separate `observed` vs `inferred` claims.
+3. Mark open questions as unresolved and propose a follow-up pass.
+
+## Brownfield + Human-Facing Artifact Pattern
+
+When documenting codebase-derived artifacts for non-technical review, always generate (or recommend) this layer map:
+
+1. `PROJECT-HOME.md` (one-page executive overview in plain language).
+2. `architecture.md` (structure + diagram).
+3. `/specs/<capability>/spec.md` (observed behavior).
+4. `/specs/<capability>/plan.md` (what to do next).
+5. `/specs/<capability>/tasks.md` (ownered checklist).
+6. `evidence-ledger.md` (compact claims + confidence + source evidence).
+7. Incident/decision/runbook notes for human-operational context.
+
+For each artifact, include a short "for humans" summary block before any raw evidence section.
+
+### Artifact Section Template (Brownfield)
+
+For spec and project notes, keep this consistent structure:
+
+```md
+## Purpose
+One-sentence purpose.
+
+## Current behavior
+- ...
+
+## Intended behavior
+- ...
+
+## Decisions and tradeoffs
+- ...
+
+## Evidence
+Reference `E###` IDs and source files.
+
+## Risks and follow-ups
+- ...
+```
+
+## Template Mapping
+
+Use this exact mapping when generating artifacts:
+
+| Artifact | Human block required | Technical block required | Minimal evidence requirement |
+| --- | --- | --- | --- |
+| `PROJECT-HOME.md` | required | required | one `## For people` + claim references |
+| `architecture.md` | required | required | at least one `E###` claim row |
+| `spec.md` | required | required | claim IDs for each major claim |
+| `plan.md` | required | required | task-level claim references |
+| `tasks.md` | required | required | path-scoped tasks and optional claim links |
+| `evidence-ledger.md` | required | required | claim registry with evidence rows |
+
+## Evidence Research Protocol
+
+For all brownfield documentation, use an explicit evidence workflow:
+
+1. Build a claim registry: `E001`, `E002`, ...
+2. For every claim, attach at least one evidence source: file path (and line range when possible), symbol, test, or config.
+3. Score confidence:
+   - `high`: corroborated by two independent evidence types (e.g., code + test)
+   - `medium`: supported by one strong evidence type
+   - `low`: inferred from conventions or partial clues
+4. Any claim not verified by code-level evidence remains `inferred`.
+5. Keep an explicit `evidence-ledger.md` and treat unresolved items as follow-up tasks.
+6. Do not publish claims marked `inferred` as required behavior in `spec.md`.
 
 ---
 
@@ -473,6 +892,22 @@ Maintain an internal evidence ledger while analyzing:
 
 Do not invent requirements. If intent is unclear, mark it as inferred and explain the evidence.
 
+Use this ledger shape:
+
+```md
+---
+title: evidence-ledger
+status: maintained
+---
+
+| id | claim | evidence | confidence | status | verification_note |
+| --- | --- | --- | --- | --- | --- |
+| E001 | ... | `backend/app.py:112-160` | medium | observed | Confirmed by handler + schema |
+| E002 | ... | `tests/test_auth.py` | high | observed | Confirmed by positive/negative cases |
+```
+
+If two evidence sources conflict, record both, downgrade confidence, and surface the conflict as a documented gap before finalizing artifacts.
+
 ## Step 3 — Spec Kit-Style Artifact Set
 
 Create artifacts that mirror Spec Kit habits while remaining useful in Obsidian.
@@ -677,6 +1112,24 @@ Before finishing:
 * Verify docs do not contradict existing README, tests, or code
 * Keep generated docs separate from source code unless the user requested inline code comments
 * Summarize files created or modified
+
+Validation checklist (required):
+
+1. Each claim in `PROJECT-HOME.md`, `constitution.md`, `architecture.md`, `spec.md`, `plan.md`, and `tasks.md` has an `E###` id.
+2. Every `E###` row in `evidence-ledger.md` includes path-based evidence.
+3. Claims at `low` confidence are explicitly marked as `inferred`.
+4. No unresolved claim is presented as observed.
+5. All contradictions are explicitly called out under "unknowns", "risks", or "open questions".
+
+Human usability checklist:
+
+1. Start with a short executive summary for non-technical readers.
+2. Place decision points before detailed evidence.
+3. Keep terminology aligned with existing vault naming.
+4. Include a `## For people` block for every artifact shared with non-technical users.
+5. Use the artifact section template for spec/plan/task notes.
+6. Include at least one clear next step with owner or condition.
+7. Avoid jargon-only sections unless explicitly requested.
 
 ---
 

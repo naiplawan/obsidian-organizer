@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "obsidian-organizer": {
+      "source": "naiplawan/obsidian-organizer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "e92b8f2d37a89d83e471f7fe32f46f141cf77d6998041efb60cd9ab132bb7395"
+    }
+  }
+}
