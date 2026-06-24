@@ -456,7 +456,7 @@ Use this exact mapping when generating artifacts:
 | `architecture.md` | required | required | at least one `E###` claim row |
 | `spec.md` | required | required | claim IDs for each major claim |
 | `plan.md` | required | required | task-level claim references |
-| `tasks.md` | required | required | path-scoped tasks and optional claim links |
+| `tasks.md` | required | required | path-scoped tasks plus claim references for behavior/integration assumptions |
 | `evidence-ledger.md` | required | required | claim registry with evidence rows |
 
 ## Evidence Research Protocol
@@ -669,10 +669,7 @@ Recommended for:
   * Title: 20-28px
   * Body: 16-18px
   * Notes: 14px minimum
-* Replace:
-
-  * `"` → `『』`
-  * `()` → `「」`
+* Replace punctuation only when explicitly required by a renderer, and only within Excalidraw `text` fields; never run global search/replace on markdown notes, code blocks, JSON, or URLs.
 
 ### Layout Rules
 
