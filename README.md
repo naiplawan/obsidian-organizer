@@ -1,8 +1,8 @@
 # Obsidian Organizer
 
-**Version 2.2.5** — Added communication mode guidance and template mapping for consistent output
+**Version 2.3.0** — Reframed as an Obsidian knowledge vault system with seven operating modes and durable documentation contracts
 
-A Claude Skill for organizing Obsidian vaults and brownfield codebase documentation specifically for AI retrieval, RAG systems, Spec Kit-style planning, and Excalidraw visual knowledge systems.
+A Claude Skill for building and maintaining structured Obsidian knowledge vaults for humans and AI. It organizes notes, improves retrieval, maintains documentation, reads codebases, creates durable knowledge structures, generates diagrams, and transforms scattered information into a long-term knowledge system.
 
 > Transform scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for people first and AI-assisted retrieval.
 
@@ -50,6 +50,14 @@ A Claude Skill for organizing Obsidian vaults and brownfield codebase documentat
 - **Communication modes added** — Explicit Human / Technical / Audit behavior for consistent output.
 - **Template mapping matrix** — Enforces minimum required human + technical + evidence sections per artifact.
 
+## What's New in v2.3.0
+
+- **Knowledge vault framing** — Establishes the core principle that a vault is a knowledge system, not a folder tree.
+- **Seven operating modes** — Adds Organize Vault, Build Knowledge Graph, Retrieval Optimization, Visual Knowledge, Documentation Builder, Living Documentation, and Codebase Reader.
+- **Documentation system guidance** — Adds reusable overview, concept, guide, decision, and runbook templates.
+- **Durable metadata contract** — Standardizes required fields for long-term retrieval and maintenance.
+- **Output contract** — Requires summary, structure, relationships, and recommendations for every run.
+
 ## What It Does
 
 - **Scans** vaults to identify problems (merged notes, inconsistent terms, orphan notes)
@@ -61,6 +69,7 @@ A Claude Skill for organizing Obsidian vaults and brownfield codebase documentat
 - **Validates** structure with fast checks
 - **Reads** brownfield codebases to extract architecture, workflows, contracts, data models, and test strategy
 - **Generates** Spec Kit-style documentation grounded in source evidence
+- **Maintains** living documentation with stale-claim and open-question tracking
 
 ## When to Use
 
@@ -69,6 +78,9 @@ Trigger phrases:
 - "make notes AI-friendly"
 - "restructure for Claude retrieval"
 - "clean up knowledge base"
+- "build a second brain"
+- "prepare this vault for AI assistants"
+- "create living documentation"
 - "optimize for AI retrieval"
 - "split this note"
 - "create diagram"
@@ -83,6 +95,7 @@ Trigger phrases:
 - "speckit documentation"
 - "generate specs from code"
 - "extract architecture from this codebase"
+- "create onboarding materials from this codebase"
 - "make a plan from the existing code"
 - Mentions of "vault", "MOC", "knowledge graph", "Excalidraw", "diagram"
 

@@ -1,8 +1,8 @@
 ---
 name: obsidian-organizer
-description: "Organize Obsidian notes and brownfield codebase documentation for AI retrieval, Spec Kit-style planning, and Excalidraw visualizations. Apply this skill whenever the user mentions organizing, restructuring, optimizing, visualizing, diagramming, or improving Obsidian vaults, knowledge bases, workflows, architectures, note collections, or brownfield project documentation. Use it when users say 'organize my notes', 'make notes AI-friendly', 'restructure for Claude retrieval', 'clean up knowledge base', 'read this codebase and document it', 'document this brownfield project', 'create Spec Kit docs', 'speckit documentation', 'generate specs from code', 'create diagrams', 'draw architecture', 'generate Excalidraw', 'visualize workflow', 'flowchart', 'mind map', or when working with MOCs, wikilinks, vault architecture, codebase documentation, and visual knowledge systems. This skill transforms scattered notes and existing repositories into atomic, interlinked, evidence-backed knowledge optimized for AI assistants, Claude Skills, RAG systems, Spec Kit-style delivery, and Excalidraw-based visual retrieval."
+description: "Build and maintain structured Obsidian knowledge vaults for humans and AI. Use this skill to organize notes, clean up messy vaults, improve AI retrieval and RAG readiness, create living documentation, read codebases, document brownfield projects, generate architecture notes, create durable knowledge structures, build wikilinked knowledge graphs, generate Excalidraw diagrams, and transform scattered information or repositories into a long-term knowledge system. Trigger it for requests like 'organize my notes', 'make notes AI-friendly', 'clean up knowledge base', 'build a second brain', 'prepare this vault for AI assistants', 'read this codebase and document it', 'generate specs from code', 'create architecture diagrams', 'draw a flowchart', 'make a concept map', or any task involving Obsidian vault architecture, MOCs, wikilinks, documentation systems, visual knowledge, Spec Kit-style planning, or evidence-backed repository knowledge extraction."
 metadata:
-  version: 2.2.5
+  version: 2.3.0
   capabilities:
     - obsidian-organization
     - rag-optimization
@@ -20,27 +20,47 @@ metadata:
     - human-first-documentation
 ---
 
-# Obsidian Organizer + Excalidraw Visual Knowledge System
+# Obsidian Knowledge Vault
 
-Transform scattered Obsidian notes into AI-ready, visually connected knowledge systems.
+Transform notes, documentation, and repositories into a durable knowledge system.
 
 This skill combines:
 
 * Structured Obsidian organization
+* Knowledge architecture
+* Documentation systems
 * AI retrieval optimization
 * RAG-friendly metadata
 * Excalidraw visualization generation
 * Architecture and workflow diagrams
 * Visual concept mapping
+* Knowledge graph construction
 * Brownfield codebase documentation
 * Spec Kit-style specifications, plans, and task breakdowns
+* Long-term maintainability
 
 ---
 
 # Core Philosophy
 
-> You are no longer organizing notes only for humans.
-> You are organizing structured context for AI retrieval and visual reasoning.
+A vault is not a folder.
+
+A vault is a knowledge system.
+
+Every artifact should answer:
+
+1. Why does this exist?
+2. How is it connected?
+3. What should someone do next?
+4. How does someone find it later?
+
+Optimize for:
+
+* Human understanding
+* AI retrieval
+* Long-term growth
+* Documentation quality
+* Visual reasoning
 
 AI systems benefit from:
 
@@ -56,6 +76,7 @@ This skill optimizes both:
 
 1. Text retrieval
 2. Visual comprehension
+3. Durable documentation
 
 Humans also benefit from:
 
@@ -64,6 +85,12 @@ Humans also benefit from:
 * Stable names and predictable section ordering
 * Actionable recommendations with owners
 * Confidence labels that prevent over-trust
+
+## Scope Guardrails
+
+Use this skill to build, maintain, and improve knowledge systems.
+
+Do not use this skill as the primary guide for implementing production features, modifying application repositories directly, or writing production application code unless the user explicitly asks for code changes. When the source of truth is a repository, default to read-only discovery and documentation.
 
 ## Human-First Workflow
 
@@ -385,6 +412,129 @@ Use these output standards for mixed audiences (adapted from plain-language and 
 * Keep headings action- or concept-focused and predictable across artifacts.
 * Explain any unavoidable technical term at first use.
 
+## Documentation System
+
+Documentation should explain:
+
+1. What is this?
+2. Why does it exist?
+3. How does it work?
+4. How do I use it?
+5. What changed?
+6. Where next?
+
+Keep documentation useful for future readers, collaborators, and AI systems. Unknowns remain unknown; do not replace missing evidence with confident prose.
+
+### Documentation Types
+
+| Type | Purpose |
+| --- | --- |
+| `overview` | Entry point and navigation |
+| `concept` | Explain one durable idea |
+| `guide` | Step-by-step usage |
+| `reference` | Lookup material |
+| `decision` | Explain choices and consequences |
+| `runbook` | Operational response |
+| `project` | Active work and delivery context |
+| `index` | Navigation and MOC |
+| `diagram` | Visual context |
+
+### Minimal Documentation Templates
+
+Use these when a more specific project or brownfield template is not required.
+
+```md
+---
+title:
+type: overview
+summary:
+related:
+---
+
+# Overview
+
+## Purpose
+
+## Who this helps
+
+## Key concepts
+
+## Related
+```
+
+```md
+---
+title:
+type: concept
+tags:
+related:
+---
+
+# Concept
+
+## Summary
+
+## Explanation
+
+## Examples
+
+## Related
+```
+
+```md
+---
+title:
+type: guide
+difficulty:
+related:
+---
+
+# Guide
+
+## Goal
+
+## Prerequisites
+
+## Steps
+
+## Troubleshooting
+
+## Next steps
+```
+
+```md
+---
+title:
+type: decision
+status:
+---
+
+# Decision
+
+## Context
+
+## Decision
+
+## Consequences
+```
+
+```md
+---
+title:
+type: runbook
+---
+
+# Runbook
+
+## Trigger
+
+## Steps
+
+## Validation
+
+## Recovery
+```
+
 ## Communication Modes
 
 Choose mode explicitly based on the user and task:
@@ -482,37 +632,94 @@ For all brownfield documentation, use an explicit evidence workflow:
 When the user types `/`, `/help`, `/mode`, `/modes`, or asks what this skill can do, present this mode selector before taking action:
 
 ```text
-Obsidian Organizer modes:
+Obsidian Knowledge Vault modes:
 
-1. Knowledge Organization
+1. Organize Vault
    Clean up notes, split large files, fix frontmatter, add wikilinks, and improve retrieval metadata.
 
-2. Visual Knowledge Generation
+2. Build Knowledge Graph
+   Identify concepts, create atomic notes, connect domains, and generate wikilinks.
+
+3. Retrieval Optimization
+   Normalize titles, terminology, aliases, keywords, and metadata for AI/RAG queries.
+
+4. Visual Knowledge
    Create Excalidraw diagrams, architecture maps, flowcharts, timelines, and mind maps.
 
-3. Hybrid Knowledge System
-   Combine structured Obsidian notes, linked concepts, metadata, and embedded diagrams.
+5. Documentation Builder
+   Create overview, concept, guide, reference, decision, runbook, project, index, and diagram docs.
 
-4. Brownfield Codebase to Spec Kit-Style Docs
-   Read an existing repository and generate evidence-backed PROJECT-HOME, constitution, architecture, spec, plan, tasks, contracts, and diagrams.
+6. Living Documentation
+   Update evolving docs, preserve history, surface stale claims, and recommend maintenance actions.
 
-Reply with 1, 2, 3, or 4, or describe what you want organized.
+7. Codebase Reader
+   Read an existing repository and generate evidence-backed PROJECT-HOME, architecture, specs, plans, tasks, contracts, and diagrams.
+
+Reply with 1-7, or describe what you want organized.
 ```
 
 If the user already clearly requested a mode, do not stop for selection. Continue with the matching workflow and state the selected mode briefly.
 
-## Mode 1 — Knowledge Organization
+## Mode 1 — Organize Vault
 
 Used for:
 
+* Scattered notes
+* Inconsistent folders
+* Missing metadata
+* Unclear note names
 * Vault cleanup
-* RAG optimization
-* Frontmatter fixes
-* Wikilink creation
-* Note splitting
-* Folder restructuring
 
-## Mode 2 — Visual Knowledge Generation
+Actions:
+
+* Normalize structure
+* Rename notes with stable, searchable titles
+* Split large notes
+* Merge or archive clutter only when safe
+* Create indexes and MOCs
+
+## Mode 2 — Build Knowledge Graph
+
+Used for:
+
+* Disconnected concepts
+* Unclear relationships
+* Missing backlinks
+* Domain maps and MOCs
+
+Actions:
+
+* Identify concepts
+* Create atomic notes
+* Generate wikilinks
+* Organize domains
+* Suggest relationship paths between notes
+
+## Mode 3 — Retrieval Optimization
+
+Used for:
+
+* Vaults queried by AI assistants
+* RAG readiness
+* Ambiguous terminology
+* Poor search results
+
+Actions:
+
+* Normalize terminology
+* Improve titles
+* Add aliases, keywords, and related notes
+* Remove ambiguity
+* Enrich metadata
+
+Rules:
+
+* Keep one concept per note
+* Use stable naming
+* Prefer explicit terminology
+* Do not collapse distinct concepts into vague summary notes
+
+## Mode 4 — Visual Knowledge
 
 Used for:
 
@@ -523,25 +730,37 @@ Used for:
 * Timelines
 * Animated Excalidraw exports
 
-## Mode 3 — Hybrid Knowledge System (Recommended)
+## Mode 5 — Documentation Builder
 
-Combines:
+Used for:
 
-1. Structured notes
-2. Linked concepts
-3. Excalidraw visualizations
-4. Embedded diagrams
-5. Retrieval metadata
+* Project documentation
+* Internal documentation
+* Durable guides and references
+* Knowledge base structure
 
-Recommended for:
+Create documentation that explains:
 
-* Engineering knowledge bases
-* Architecture documentation
-* Incident management systems
-* ADR repositories
-* Operational intelligence vaults
+* What exists
+* Why it exists
+* How it works
+* How to use it
+* What changed
+* Where to continue
 
-## Mode 4 — Brownfield Codebase to Spec Kit-Style Docs
+## Mode 6 — Living Documentation
+
+Used when documentation evolves.
+
+Actions:
+
+* Compare current state against existing docs
+* Update outdated notes
+* Preserve historical context
+* Maintain changelogs or decision trails
+* Mark stale or unverified claims
+
+## Mode 7 — Codebase Reader
 
 Used when the source material is an existing repository instead of an existing note set.
 
@@ -561,6 +780,35 @@ Recommended for:
 * Creating implementation-grounded plans before refactors
 * Building project knowledge bases from source code
 
+## Legacy Mode Mapping
+
+Map older requests to the newer modes:
+
+* Knowledge Organization -> Mode 1, 2, or 3 depending on scope
+* Visual Knowledge Generation -> Mode 4
+* Hybrid Knowledge System -> combine Modes 1-4
+* Brownfield Codebase to Spec Kit-Style Docs -> Mode 7
+
+### Hybrid Knowledge System Pattern
+
+Combine modes when the user asks for an end-to-end knowledge system.
+
+Hybrid systems include:
+
+1. Structured notes
+2. Linked concepts
+3. Excalidraw visualizations
+4. Embedded diagrams
+5. Retrieval metadata
+
+Recommended for:
+
+* Engineering knowledge bases
+* Architecture documentation
+* Incident management systems
+* ADR repositories
+* Operational intelligence vaults
+
 ---
 
 # Trigger Detection
@@ -570,17 +818,25 @@ Recommended for:
 * organize my notes
 * optimize for AI retrieval
 * restructure vault
+* build a second brain
+* prepare this vault for AI assistants
 * split this note
 * add wikilinks
 * fix frontmatter
 * clean up knowledge base
 * make AI-friendly
+* create a living documentation system
+* connect ideas with wikilinks
+* improve retrieval
+* create durable knowledge structure
 
 ## Brownfield / Spec Kit Triggers
 
 * read this codebase and document it
 * document this brownfield project
 * organize documentation from the repo
+* understand this repository
+* create onboarding materials from this codebase
 * generate specs from code
 * create Spec Kit docs
 * speckit documentation
@@ -1134,22 +1390,30 @@ Human usability checklist:
 
 ```text
 /vault
+├── /Inbox
 ├── /Concepts
 │   ├── /Architecture
 │   ├── /Patterns
 │   └── /Standards
+├── /Projects
+├── /Docs
+│   ├── /Overview
+│   ├── /Guides
+│   ├── /References
+│   ├── /Decisions
+│   ├── /Runbooks
+│   └── /Index
 ├── /Diagrams
 │   ├── /Architecture
 │   ├── /Flows
 │   ├── /Incidents
 │   └── /Mindmaps
-├── /Incidents
-├── /Decisions
-├── /Runbooks
-├── /Projects
 ├── /Glossary
-└── /Archive
+├── /Archive
+└── /Index
 ```
+
+Use the existing vault convention when one already exists. Recommend migration paths instead of forcing a disruptive folder move.
 
 ---
 
@@ -1228,16 +1492,22 @@ Avoid:
 
 # Metadata Standards
 
+Every durable note should include:
+
 ```yaml
 ---
 title:
 type:
+summary:
 domain:
 stack:
 services:
 keywords:
+aliases:
 status:
 confidence:
+created:
+updated:
 last_verified:
 related:
 diagram:
@@ -1248,6 +1518,8 @@ spec_artifact:
 evidence_confidence:
 ---
 ```
+
+For lightweight notes, `title`, `type`, `summary`, `tags` or `keywords`, `created`, `updated`, `related`, and `status` are the minimum useful fields.
 
 ## New Visual Metadata Fields
 
@@ -1303,6 +1575,24 @@ Diagrams should reinforce retrieval structure.
 ---
 
 # Output Requirements
+
+Always provide:
+
+## Summary
+
+What changed or what was produced.
+
+## Structure
+
+Files created, updated, moved, split, or recommended.
+
+## Relationships
+
+Wikilinks, backlinks, indexes, diagrams, and source relationships created or proposed.
+
+## Recommendations
+
+Suggested next improvements, open questions, stale areas, and validation follow-ups.
 
 ## For Organization Tasks
 
@@ -1397,10 +1687,12 @@ Unknowns:
 
 # Final Principle
 
-> Great AI knowledge systems are both semantically structured and visually navigable.
+Capture information.
 
-Text explains.
+Create understanding.
 
-Diagrams compress complexity.
+Connect understanding.
 
-Together they create high-quality retrieval systems for humans and AI.
+Build knowledge that lasts.
+
+Great AI knowledge systems are both semantically structured and visually navigable. Text explains. Diagrams compress complexity. Together they create high-quality retrieval systems for humans and AI.
